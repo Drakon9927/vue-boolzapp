@@ -1,86 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>
     <script src="https://unpkg.com/axios@1.6.8/dist/axios.min.js"></script>
 </head>
+
 <body>
     <!-- Vue Div -->
     <div id="app">
-        <div class="custom-container my-4">
-            <div class="bgcolorg">
+        <div class="custom-container my-4 bg-white">
+            <div class="d-flex row customheight g-0">
                 <!-- colonna a sinistra -->
-                <div class="col-5">
+                <div class="col-5 bleft">
                     <!-- Finestra utente -->
-                    <div class="d-flex align-items-center justify-content-between mb-2 wheight">
+                    <div class="d-flex align-items-center justify-content-between wheight bgcolorg">
                         <div class="d-flex align-items-center wheight">
                             <img class="userimgsize" src="./img/avatar_io.jpg" alt="" class="me-2 p-3">
-                            <strong><p class="mb-0">Sofia</p></strong>
+                            <strong>
+                                <p class="mb-0">Sofia</p>
+                            </strong>
                         </div>
                         <!-- Fontawesome div -->
                         <div class="fontbox">
-                            I font con justify end
+                            <i class="fa fa-circle-o-notch" style="font-size:24px"></i>
+                            <i class="fa fa-comment-o" style="font-size:24px"></i>
+                            <i class="fa fa-ellipsis-v" style="font-size:24px"></i>
                         </div>
                     </div>
                     <!-- Finestra notifiche messaggi -->
                     <div class="bgcolora wheight">
                         <i class="fa fa-bell-slash-o me-3 p-3" style="font-size:36px"></i>
-                        <div class  ="d-flex flex-column">
-                            <strong><p class="mb-0">Ricevi notifiche di nuovi messaggi</p></strong>
+                        <div class="d-flex flex-column">
+                            <strong>
+                                <p class="mb-0">Ricevi notifiche di nuovi messaggi</p>
+                            </strong>
                             <p>Attiva notifiche desktop</p>
                         </div>
                     </div>
 
-                    <!-- Finestra di ricerca -->
-                    <div class="input-group">
-                        <span class="input-group-append">
-                            <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                        <input class="form-control border-end-0 border rounded-pill" type="text" value="Cerca o inizia una nuova chat" id="example-search-input">
 
+                    <!-- Finestra di ricerca -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text h-100" id="basic-addon1"> <i class="fa fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                            aria-label="Username" aria-describedby="basic-addon1">
                     </div>
+
+
 
                     <!-- Lista Utenti Chat -->
+                    <div class="userscontainer  overflowbar">
+                        <div class="col-12 wheight">
+                            <!-- 1° utente -->
+                            <div class="d-flex row mb-3">
+                                <div class="col-8">
+                                    <div class="d-flex align-items-center ">
+                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
 
-                    <div class="col-12 wheight">
-                        <!-- 1° utente -->
-                        <div class="d-flex row">
-                            <div class="col-8">
-                                <div class="d-flex align-items-center ">
-                                    <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
-                                    
-                                    <div class  ="d-flex flex-column">
-                                        <strong><p class="mb-0">Michele</p></strong>
-                                        <span>Ultimo messaggio inviato</span>
+                                        <div class="d-flex flex-column">
+                                            <strong>
+                                                <p class="mb-0">Michele</p>
+                                            </strong>
+                                            <span>Ultimo messaggio inviato</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-    
-                            <div class="col-4">
-    
-                            </div>
-                        </div>
-                        
 
+                                <div class="col-4">
+                                    <p>12:00</p>
+                                </div>
+                            </div>
+
+                            <!-- 2° utente -->
+                            <div class="d-flex row mb-3">
+                                <div class="col-8">
+                                    <div class="d-flex align-items-center ">
+                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
+
+                                        <div class="d-flex flex-column">
+                                            <strong>
+                                                <p class="mb-0">Fabio</p>
+                                            </strong>
+                                            <span>Ultimo messaggio inviato</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <p>12:00</p>
+                                </div>
+                            </div>
+
+                            <!-- 3° utente -->
+                            <div class="d-flex row mb-3">
+                                <div class="col-8">
+                                    <div class="d-flex align-items-center ">
+                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
+
+                                        <div class="d-flex flex-column">
+                                            <strong>
+                                                <p class="mb-0">Samuele</p>
+                                            </strong>
+                                            <span>Ultimo messaggio inviato</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <p>12:00</p>
+                                </div>
+                            </div>
+
+                            <!-- 4° utente -->
+                            <div class="d-flex row mb-3">
+                                <div class="col-8">
+                                    <div class="d-flex align-items-center ">
+                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
+
+                                        <div class="d-flex flex-column">
+                                            <strong>
+                                                <p class="mb-0">Alessandro B.</p>
+                                            </strong>
+                                            <span>Ultimo messaggio inviato</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <p>12:00</p>
+                                </div>
+                            </div>
+
+                            <!-- 5° utente -->
+                            <div class="d-flex row mb-3">
+                                <div class="col-8">
+                                    <div class="d-flex align-items-center ">
+                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
+
+                                        <div class="d-flex flex-column">
+                                            <strong>
+                                                <p class="mb-0">Alessandro L.</p>
+                                            </strong>
+                                            <span>Ultimo messaggio inviato</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <p>12:00</p>
+                                </div>
+                            </div>
+
+                            <!-- 6° utente -->
+                            <div class="d-flex row mb-3">
+                                <div class="col-8">
+                                    <div class="d-flex align-items-center ">
+                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
+
+                                        <div class="d-flex flex-column">
+                                            <strong>
+                                                <p class="mb-0">Claudia</p>
+                                            </strong>
+                                            <span>Ultimo messaggio inviato</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <p>12:00</p>
+                                </div>
+                            </div>
+
+                            <!-- 7° utente -->
+                            <div class="d-flex row mb-3">
+                                <div class="col-8">
+                                    <div class="d-flex align-items-center ">
+                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
+
+                                        <div class="d-flex flex-column">
+                                            <strong>
+                                                <p class="mb-0">Federico</p>
+                                            </strong>
+                                            <span>Ultimo messaggio inviato</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <p>12:00</p>
+                                </div>
+                            </div>
+
+                            <!-- 8° utente -->
+                            <div class="d-flex row mb-3">
+                                <div class="col-8">
+                                    <div class="d-flex align-items-center ">
+                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
+
+                                        <div class="d-flex flex-column">
+                                            <strong>
+                                                <p class="mb-0">Davide</p>
+                                            </strong>
+                                            <span>Ultimo messaggio inviato</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <p>12:00</p>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
                     </div>
 
+
+
                 </div>
+
                 <!-- colonna a destra -->
                 <div class="col-7">
                     <!-- Contenuto della colonna a destra -->
+                    <div class="d-flex align-items-center justify-content-between wheight bgcolorg">
+                        <div class="d-flex align-items-center wheight">
+                            <img class="userimgsize" src="./img/avatar_io.jpg" alt="" class="me-2 p-3">
+                            <strong>
+                                <p class="mb-0">Sofia</p>
+                            </strong>
+                        </div>
+                        <!-- Fontawesome div -->
+                        <div class="fontbox">
+                            <i class="fa fa-search" style="font-size:24px"></i>
+                            <i class="fa fa-link" style="font-size:24px"></i>
+                            <i class="fa fa-ellipsis-v" style="font-size:24px"></i>
+                        </div>
+                    </div>
+
+                    <div class="chatcontainer">
+                        <div class="row g-0">
+                            <!-- Colonna 1 con 10 righe -->
+                            <div class="col-6 d-flex flex-column">
+                                <!-- Riga 1 -->
+                                <div class="p-3 my-2">Riga 1</div>
+                                <!-- Riga 2 -->
+                                <div class="p-3 ">Riga 2</div>
+                                <!-- Riga 3 -->
+                                <div class="p-3 my-2">Riga 3</div>
+                                <!-- Riga 4 -->
+                                <div class="p-3 "><span class="bg-white">Tutto fatto</span></div>
+                                <!-- Riga 5 -->
+                                <div class="p-3 my-2 ">Riga 5</div>
+                                <!-- Riga 6 -->
+                                <div class="p-3 ">Riga 6</div>
+                                <!-- Riga 7 -->
+                                <div class="p-3 my-2">Riga 7</div>
+                                <!-- Riga 8 -->
+                                <div class="p-3 ">Riga 8</div>
+                                <!-- Riga 9 -->
+                                <div class="p-3 my-2">Riga 9</div>
+                                <!-- Riga 10 -->
+                                <div class="p-3 ">Riga 10</div>
+                            </div>
+                            <!-- Colonna 2 con 10 righe -->
+                            <div class="col-6 d-flex flex-column">
+                                <!-- Riga 1 -->
+                                <div class="p-3 ">Riga 1</div>
+                                <!-- Riga 2 -->
+                                <div class="p-3 my-2"> <span class="bgcolorgreen">Hai portato a spasso il cane?</span></div>
+                                <!-- Riga 3 -->
+                                <div class="p-3 "> <span class="bgcolorgreen">Ricordati di stendere i panni!</span></div>
+                                <!-- Riga 4 -->
+                                <div class="p-3 my-2">Riga 4</div>
+                                <!-- Riga 5 -->
+                                <div class="p-3 ">Riga 5</div>
+                                <!-- Riga 6 -->
+                                <div class="p-3 my-2">Riga 6</div>
+                                <!-- Riga 7 -->
+                                <div class="p-3 ">Riga 7</div>
+                                <!-- Riga 8 -->
+                                <div class="p-3 my-2">Riga 8</div>
+                                <!-- Riga 9 -->
+                                <div class="p-3 my-2">Riga 9</div>
+                                <!-- Riga 10 -->
+                                <div class="p-3 ">Riga 10</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input testo -->
+                    <div class="col-12">
+                        <div class="d-flex row g-0 bgcolord">
+                            <div class="col-1">
+                                <i class="fa fa-smile-o p-4" style="font-size:36px"></i>
+                            </div>
+    
+                            <div class="col-10 p-3">
+                                <input class="form-control form-control-lg" type="text" placeholder="Scrivi un messaggio">
+                            </div>
+    
+                            <div class="col-1">
+                                <i class="fa fa-microphone p-4 " style="font-size:36px"></i>
+                            </div>
+                        </div>
+                       
+                    </div>
                 </div>
+
+
+
             </div>
         </div>
     </div>
     <script src="./js/script.js"></script>
 </body>
+
 </html>

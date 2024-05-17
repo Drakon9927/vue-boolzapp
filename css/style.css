@@ -10,6 +10,7 @@ body {
     width: 100%;
 }
 
+
 .bgcolorg{
     background-color: lightgray;
     display: flex;
@@ -41,4 +42,47 @@ body {
     width: 70px;
     margin-left: 10px;
     border-radius: 50%;
+}
+
+.userscontainer{
+    height: 78%;
+    width: 100%;
+}
+
+.overflowbar{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.customheight{
+    height: 75vh;
+}
+
+.chatcontainer{
+    height: 80vh;
+    background-image: url(../img/mine.jpg)
+}
+
+.bgcolord{
+    background-color: #F3EEEA;
+}
+
+.bleft{
+    border-right: 2px solid rgba(128, 128, 128, 0.4);
+    
+}
+span{
+    border-radius: 49px 49px 49px 49px;
+    -webkit-border-radius: 49px 49px 49px 49px;
+    -moz-border-radius: 49px 49px 49px 49px;
+    padding: 20px;
+}
+
+.bgcolorgreen{
+    background-color: #D5F9BA;
+}
+
+.fontbox > i{
+    color: gray;
+    margin: 0 10px;
 }
