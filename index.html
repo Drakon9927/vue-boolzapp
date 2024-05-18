@@ -116,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Input testo -->
                     <div class="col-12">
                         <div class="d-flex row g-0 bgcolord">
@@ -125,7 +125,7 @@
                             </div>
     
                             <div class="col-10 p-3">
-                                <input class="form-control form-control-lg" type="text" placeholder="Scrivi un messaggio">
+                                 <input class="form-control form-control-lg" type="text" placeholder="Scrivi un messaggio" v-model="nuovoMessaggio" @keyup.enter="inviaMessaggio">
                             </div>
     
                             <div class="col-1">

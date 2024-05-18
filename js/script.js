@@ -78,11 +78,31 @@ createApp({
                 }
             ],
             contattoAttivo: null,
+            nuovoMessaggio: ''
         }
     },
     methods: {
         selezionaContatto(i) {
             this.contattoAttivo = this.contatti[i];
+        },
+        
+        inviaMessaggio() {
+            if (this.nuovoMessaggio.trim() !== '') {
+                this.contattoAttivo.messaggi.push({
+                    testo: this.nuovoMessaggio,
+                    inviato: true
+                });
+                this.nuovoMessaggio = '';
+                this.rispostaAutomatica();
+            }
+        },
+        rispostaAutomatica() {
+            setTimeout(() => {
+                this.contattoAttivo.messaggi.push({
+                    testo: 'ok',
+                    inviato: false
+                });
+            }, 1000);
         }
     },
     mounted() {
