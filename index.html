@@ -62,14 +62,14 @@
                     <div class="userscontainer  overflowbar">
                         <div class="col-12 wheight">
                             <!-- 1° utente -->
-                            <div class="d-flex row mb-3">
+                            <div class="d-flex row mb-3" v-for="(contatto, i) in contatti" :key="i">
                                 <div class="col-8">
                                     <div class="d-flex align-items-center ">
-                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
+                                        <img class="userimgsize" :src="contatto.img" alt="" class="me-2 p-3">
 
                                         <div class="d-flex flex-column">
                                             <strong>
-                                                <p class="mb-0">Michele</p>
+                                                <p class="mb-0">{{ contatto.nome }}</p>
                                             </strong>
                                             <span>Ultimo messaggio inviato</span>
                                         </div>
@@ -80,149 +80,6 @@
                                     <p>12:00</p>
                                 </div>
                             </div>
-
-                            <!-- 2° utente -->
-                            <div class="d-flex row mb-3">
-                                <div class="col-8">
-                                    <div class="d-flex align-items-center ">
-                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
-
-                                        <div class="d-flex flex-column">
-                                            <strong>
-                                                <p class="mb-0">Fabio</p>
-                                            </strong>
-                                            <span>Ultimo messaggio inviato</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <p>12:00</p>
-                                </div>
-                            </div>
-
-                            <!-- 3° utente -->
-                            <div class="d-flex row mb-3">
-                                <div class="col-8">
-                                    <div class="d-flex align-items-center ">
-                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
-
-                                        <div class="d-flex flex-column">
-                                            <strong>
-                                                <p class="mb-0">Samuele</p>
-                                            </strong>
-                                            <span>Ultimo messaggio inviato</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <p>12:00</p>
-                                </div>
-                            </div>
-
-                            <!-- 4° utente -->
-                            <div class="d-flex row mb-3">
-                                <div class="col-8">
-                                    <div class="d-flex align-items-center ">
-                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
-
-                                        <div class="d-flex flex-column">
-                                            <strong>
-                                                <p class="mb-0">Alessandro B.</p>
-                                            </strong>
-                                            <span>Ultimo messaggio inviato</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <p>12:00</p>
-                                </div>
-                            </div>
-
-                            <!-- 5° utente -->
-                            <div class="d-flex row mb-3">
-                                <div class="col-8">
-                                    <div class="d-flex align-items-center ">
-                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
-
-                                        <div class="d-flex flex-column">
-                                            <strong>
-                                                <p class="mb-0">Alessandro L.</p>
-                                            </strong>
-                                            <span>Ultimo messaggio inviato</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <p>12:00</p>
-                                </div>
-                            </div>
-
-                            <!-- 6° utente -->
-                            <div class="d-flex row mb-3">
-                                <div class="col-8">
-                                    <div class="d-flex align-items-center ">
-                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
-
-                                        <div class="d-flex flex-column">
-                                            <strong>
-                                                <p class="mb-0">Claudia</p>
-                                            </strong>
-                                            <span>Ultimo messaggio inviato</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <p>12:00</p>
-                                </div>
-                            </div>
-
-                            <!-- 7° utente -->
-                            <div class="d-flex row mb-3">
-                                <div class="col-8">
-                                    <div class="d-flex align-items-center ">
-                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
-
-                                        <div class="d-flex flex-column">
-                                            <strong>
-                                                <p class="mb-0">Federico</p>
-                                            </strong>
-                                            <span>Ultimo messaggio inviato</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <p>12:00</p>
-                                </div>
-                            </div>
-
-                            <!-- 8° utente -->
-                            <div class="d-flex row mb-3">
-                                <div class="col-8">
-                                    <div class="d-flex align-items-center ">
-                                        <img class="userimgsize" src="./img/avatar_1.jpg" alt="" class="me-2 p-3">
-
-                                        <div class="d-flex flex-column">
-                                            <strong>
-                                                <p class="mb-0">Davide</p>
-                                            </strong>
-                                            <span>Ultimo messaggio inviato</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <p>12:00</p>
-                                </div>
-                            </div>
-
-
-
 
                         </div>
                     </div>
