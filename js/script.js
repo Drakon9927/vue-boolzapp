@@ -78,14 +78,24 @@ createApp({
                 }
             ],
             contattoAttivo: null,
-            nuovoMessaggio: ''
+            nuovoMessaggio: '',
+            ricerca: ``
         }
     },
+
+    computed: {
+        contattiFiltrati() {
+            return this.contatti.filter(contatto => 
+                contatto.nome.toLowerCase().includes(this.ricerca.toLowerCase())
+            );
+        }
+    },
+
     methods: {
-        selezionaContatto(i) {
-            this.contattoAttivo = this.contatti[i];
+        selezionaContatto(contatto) {
+            this.contattoAttivo = this.contatto;
         },
-        
+
         inviaMessaggio() {
             if (this.nuovoMessaggio.trim() !== '') {
                 this.contattoAttivo.messaggi.push({
