@@ -79,10 +79,9 @@ createApp({
             ],
             contattoAttivo: null,
             nuovoMessaggio: '',
-            ricerca: ``
+            ricerca: ''
         }
     },
-
     computed: {
         contattiFiltrati() {
             return this.contatti.filter(contatto => 
@@ -90,12 +89,10 @@ createApp({
             );
         }
     },
-
     methods: {
         selezionaContatto(contatto) {
-            this.contattoAttivo = this.contatto;
+            this.contattoAttivo = contatto;
         },
-
         inviaMessaggio() {
             if (this.nuovoMessaggio.trim() !== '') {
                 this.contattoAttivo.messaggi.push({
